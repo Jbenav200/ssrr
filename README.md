@@ -5,7 +5,7 @@ As a group we decided that we wanted to develop
 a web based application which records and visualises
 data from NASA's NEO API.
 
-##### ->What Does the S.S.R.R do with the API data?<-
+<center>##### What Does the S.S.R.R do with the API data?</center>
 The Scottish Space Rock Register collects data about Near
 Earth Objects recorded by NASA and partner satellites.
 This data allows us to calculate the radius of a NEO's orbit
