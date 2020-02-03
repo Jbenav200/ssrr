@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class Meteorite(models.Model):
-    id = models.PositiveIntegerField()
+    id = models.PositiveIntegerField(primary_key=True)
     name = models.CharField(max_length=50)
     rec_class = models.CharField(max_length=50)
     mass = models.FloatField()
