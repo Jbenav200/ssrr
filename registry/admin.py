@@ -1,7 +1,7 @@
 import json
 from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.contrib import admin
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, User
 from pip._vendor import requests
 
 from .models import Meteorite
@@ -60,4 +60,7 @@ class MeteoriteImportAdmin(admin.ModelAdmin):
 
 
 admin.site.site_header = 'Scottish Space Rock Register - Admin Dashboard'
+admin.site.index_title = 'S.S.R.R Administration'
 admin.site.register(Meteorite, MeteoriteImportAdmin)
+admin.site.unregister(Group)
+admin.site.unregister(User)
