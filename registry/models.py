@@ -21,3 +21,4 @@ class Meteorite(models.Model):
         meteorite = Meteorite(id=id, name=name, rec_class=rec_class, mass=mass, fall=fall, year=year,
                               rec_latitude=rec_latitude, rec_longitude=rec_longitude, geolocation=geolocation)
         return meteorite
+
