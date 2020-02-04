@@ -2,28 +2,10 @@
 {% block object-tools %}
     <form id="form" method="POST" action="import/">
         {% csrf_token %}
-        <button type="Submit" class="button" id="btn">Import</button>
+        <input type="hidden" name="next" value="{{ request.path }}"/>
+        <button type="Submit" class="button" id="btn">Import From NASA</button>
     </form>
     <br/>
-    <script>
-        btn = document.getElementById('btn');
-        form = document.getElementById('form');
-        url = 'https://data.nasa.gov/resource/gh4g-9sfh.json';
-
-        btn.addEventListener('click', function()
-        {
-            console.log('done');
-            var ourRequest = new XMLHttpRequest();
-            ourRequest.open('GET', url);
-            ourRequest.onload = function() {
-                console.log(ourRequest.responseText); // Not JSON format
-                var ourText = ourRequest.responseText;
-                var ourData = JSON.parse(ourText);
-                console.log(ourData);
-            };
-            ourRequest.send()
-        })
-    </script>
 
     {{ block.super}}
 {% endblock object-tools %}
