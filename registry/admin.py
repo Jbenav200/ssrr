@@ -25,7 +25,7 @@ class MeteoriteImportAdmin(admin.ModelAdmin):
         r = requests.get('https://data.nasa.gov/resource/gh4g-9sfh.json')
         new_data = r.json()
         for m in new_data:
-            print(m)
+            self.model.objects.create(m)
 
 
 admin.site.site_header = 'Scottish Space Rock Register - Admin Dashboard'
