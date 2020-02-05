@@ -1,0 +1,11 @@
+<a href="../" class="button">Back</a>
+{% if meteorite_list %}
+    <ul>
+        {% for meteorite in meteorite_list %}
+            <li><a href="{% url 'detail' meteorite.id %}">{{ meteorite.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Meteors were found.</p>
+{% endif %}
+
