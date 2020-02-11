@@ -25,7 +25,6 @@ class ExampleForm(forms.Form):
         self.helper = FormHelper()
         self.helper.form_id = 'id-example-form'
         self.helper.form_class = 'blueForms'
-        self.helper.form_method = 'post'
-        self.helper.form_action = reverse('search-by-name', kwargs={'meteorite_name': meteorite.name})
+        self.helper.form_method = 'GET'
 
         self.helper.add_input(self.submit)

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from .models import Meteorite
 from .forms import ExampleForm
+from django.db.models import Q
 from django.urls import reverse
 
 
@@ -25,3 +26,15 @@ def detail(request, meteorite_id):
 def search_return(request, meteorite_name):
     meteorite = get_object_or_404(Meteorite, meteorite_name=meteorite_name)
     return render(request, 'registry/detail.html', {'meteorite': meteorite})
+
+
+def search(request):
+    template = 'registry/search.html'
+    query = request.GET.get('q')
+    results = get_object_or_404(Meteorite, Q(name__icontains=query))
+    meteorite = results
+    context = {
+        'meteorite': meteorite
+    }
+
+    return render(request, template, context)

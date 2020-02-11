@@ -1,0 +1,29 @@
+{% load static %}
+{% if meteorite %}
+<h1 class="text-center">{{ meteorite.name }}</h1>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-3 text-center">
+                <h2>class</h2>
+                <p>{{ meteorite.rec_class }}</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h2>Mass <sub>in kg</sub></h2>
+                <p>{{ meteorite.mass }}</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h2>Geolocation</h2>
+                <p>{{ meteorite.geolocation }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% else %}
+<body>
+    <p>No Meteorite was found.</p>
+</body>
+
+{% endif %}

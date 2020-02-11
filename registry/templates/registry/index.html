@@ -2,7 +2,12 @@
 
 {% load crispy_forms_tags %}
 
-    {% crispy example_form  example_form.helper %}
+   <!-- {% crispy example_form  example_form.helper %} -->
+
+<form method="GET" action="{% url 'search' %}">
+    <input type="text" name="q" value="{{ request.GET.q }}" placeholder="search by name..">
+    <input type="submit" value="Search" class="btn btn-success">
+</form>
 
 
 {% if meteorite_list %}
