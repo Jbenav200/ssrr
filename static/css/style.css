@@ -1,5 +1,6 @@
-html{
-
+html, body{
+    top:0;
+    padding:0;
 }
 
 .text-center{
@@ -15,10 +16,29 @@ html{
     color:deeppink;
 }
 
-h2{
+h2.registry{
     text-decoration: underline;
 }
 
 p{
     font-weight: bolder;
+}
+
+.bg-pink{
+    background-color: dodgerblue;
+    height:auto;
+    width:100%;
+    margin-top:0;
+    padding-top: 0;
+    position: relative;
+    color:whitesmoke;
+}
+
+.page-header{
+    margin:0 0 2%!important;
+    padding-top: 2%;
+}
+
+.page-header>h1{
+    padding-bottom: 2%;
 }

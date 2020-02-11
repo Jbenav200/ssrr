@@ -4,8 +4,7 @@ from django.http import HttpResponse
 
 # index view
 def index(request):
-    return HttpResponse("<h1 style='text-align:center'>Scottish Space Rock Registry</h1> <h3>You're at the tracker "
-                        "index.</h3>")
+    return render(request, 'tracker/index.html')
 
 
 def tracker(request):
