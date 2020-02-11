@@ -1,6 +1,8 @@
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django import forms
+from .models import Meteorite
+from django.urls import reverse
 
 
 class ExampleForm(forms.Form):
@@ -10,12 +12,20 @@ class ExampleForm(forms.Form):
         required=True,
     )
 
+    submit = Submit('submit', 'Search', css_class='btn-success')
+
+    class Meta:
+        model = Meteorite
+        fields = [
+            "name"
+        ]
+
     def __init__(self, *args, **kwargs):
         super(ExampleForm, self).__init__(*args, **kwargs)
-        self.helper = FormHelper
+        self.helper = FormHelper()
         self.helper.form_id = 'id-example-form'
         self.helper.form_class = 'blueForms'
         self.helper.form_method = 'post'
-        self.helper.form_action = 'submit_survey'
+        self.helper.form_action = reverse('search-by-name', kwargs={'meteorite_name': meteorite.name})
 
-        self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.add_input(self.submit)

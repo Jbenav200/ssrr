@@ -1,7 +1,9 @@
 <a href="../" class="button">Back</a>
 
 {% load crispy_forms_tags %}
-{% crispy example_form example_form.helper %}
+
+    {% crispy example_form  example_form.helper %}
+
 
 {% if meteorite_list %}
     <ul>
@@ -12,4 +14,3 @@
 {% else %}
     <p>No Meteors were found.</p>
 {% endif %}
-
