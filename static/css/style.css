@@ -1,3 +1,24 @@
+html{
+
+}
+
 .text-center{
     text-align: center;
+}
+
+.btn-success{
+    background-color: lawngreen;
+    color: black;
+}
+
+.pink{
+    color:deeppink;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+p{
+    font-weight: bolder;
 }
