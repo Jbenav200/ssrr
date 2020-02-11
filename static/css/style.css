@@ -35,10 +35,35 @@ p{
 }
 
 .page-header{
-    margin:0 0 2%!important;
+    margin:0 0 0!important;
     padding-top: 2%;
+    border-bottom: 0!important;
 }
 
 .page-header>h1{
-    padding-bottom: 2%;
+    padding-bottom: 2%
+}
+
+.banner{
+    padding:0;
+    min-width: 100%;
+    max-height: 400px;
+}
+
+.text-up-5{
+    margin-top:-15%;
+    color:white;
+}
+
+.container{
+    margin-top: 30%;
+}
+
+a>h1{
+    color:white;
+    text-decoration: none;
+}
+
+a>h1:hover{
+    text-decoration: none;
 }
