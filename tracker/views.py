@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from registry.models import Meteorite
+
 
 # index view
 def index(request):
@@ -12,5 +14,9 @@ def tracker(request):
 
 
 def tracker_map(request):
-    return render(request, 'tracker/map.html')
+    meteorites = Meteorite.objects.all()[:50]
+    context = {
+        'meteorites': meteorites
+    }
+    return render(request, 'tracker/map.html', context)
 

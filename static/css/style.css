@@ -92,3 +92,7 @@ a>h1:hover{
 #map{
     margin-top:-0.8%;
 }
+
+.m-0-auto{
+    margin:0 auto;
+}
