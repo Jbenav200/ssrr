@@ -24,7 +24,7 @@ p{
     font-weight: bolder;
 }
 
-.bg-pink{
+.bg-blue{
     background-color: dodgerblue;
     height:auto;
     width:100%;
@@ -66,4 +66,29 @@ a>h1{
 
 a>h1:hover{
     text-decoration: none;
+}
+
+.hero{
+    width:100%;
+    max-height:300px;
+}
+
+.bg-dblue{
+    background-color: royalblue;
+    color:white;
+    height:auto;
+    width:auto;
+}
+
+.mt-min-20{
+    margin-top:-1.5%;
+}
+
+.bg-black{
+    background-color: black;
+    color:white;
+}
+
+#map{
+    margin-top:-0.8%;
 }

@@ -10,3 +10,7 @@ def index(request):
 def tracker(request):
     return HttpResponse('<h1 style="text-align:center">Track Meteorite Landings</h1>')
 
+
+def tracker_map(request):
+    return render(request, 'tracker/map.html')
+
