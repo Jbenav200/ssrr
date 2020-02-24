@@ -13,6 +13,11 @@
 {% load crispy_forms_tags %}
 
    <!-- {% crispy example_form  example_form.helper %} -->
+
+<header class="bg-blue page-header">
+    <a href="/"><h1 class="text-center">Scottish Space Rock Register</h1></a>
+</header>
+
 <div class="text-center">
     <h2>Register</h2>
     <br>
@@ -29,9 +34,8 @@
             <thead class="thead-dark">
                 <th>Id</th>
                 <th>Name</th>
-                <th>Longitude</th>
-                <th>Latitude</th>
-                <th>Mass</th>
+                <th>Geolocation</th>
+                <th>Mass <sub>in Kg</sub></th>
                 <th>Class</th>
             </thead>
             <tbody>
@@ -39,8 +43,7 @@
                 <tr>
                     <th scope="row">{{ m.id }}</th>
                     <td>{{ m.name }}</td>
-                    <td>{{ m.rec_longitude }}</td>
-                    <td>{{ m.rec_latitude }}</td>
+                    <td>{{ m.geolocation }}</td>
                     <td>{{ m.mass }}</td>
                     <td>{{ m.rec_class }}</td>
                 </tr>
