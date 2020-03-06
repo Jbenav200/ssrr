@@ -6,7 +6,10 @@ from registry.models import Meteorite
 
 # index view
 def index(request):
-    return render(request, 'tracker/index.html')
+    context = {
+        'title': 'Index',
+    }
+    return render(request, 'tracker/index.html', context)
 
 
 def tracker(request):
