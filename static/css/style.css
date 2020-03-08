@@ -1,6 +1,24 @@
 html, body{
     top:0;
     padding:0;
+    color: whitesmoke;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.bg-space{
+    background: white url("../media/images/space-banner.jpg") no-repeat;
+}
+
+.text-white{
+    color:whitesmoke;
+}
+
+a.text-white:hover{
+    opacity:0.8;
+    color: rgba(61, 61, 61, 0.8);
 }
 
 .text-center{
@@ -25,7 +43,7 @@ p{
 }
 
 .bg-blue{
-    background-color: dodgerblue;
+    background: rgba(0, 0, 0, 0.9);
     height:auto;
     width:100%;
     margin-top:0;
@@ -34,6 +52,21 @@ p{
     color:whitesmoke;
 }
 
+.bg-nav-black{
+    background: rgba(0, 0, 0, 0.9);
+    color:whitesmoke;
+}
+
+.bg-nav-black > .nav-link{
+    color:whitesmoke;
+}
+
+.mt-20{
+    margin-top:20%;
+    color: whitesmoke;
+}
+
+/**
 .page-header{
     margin:0 0 0!important;
     padding-top: 2%;
@@ -43,7 +76,7 @@ p{
 .page-header>h1{
     padding-bottom: 2%
 }
-
+*/
 .banner{
     padding:0;
     max-width: 100%;
@@ -56,7 +89,11 @@ p{
 }
 
 .container{
-    margin-top: 30%;
+ /** do nothing */
+}
+
+.bt-20{
+    margin-bottom:200px;
 }
 
 a>h1{
@@ -95,4 +132,8 @@ a>h1:hover{
 
 .m-0-auto{
     margin:0 auto;
+}
+
+.navbar-nav{
+    float:right;
 }
