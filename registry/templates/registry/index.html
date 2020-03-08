@@ -6,17 +6,11 @@
 {% block content %}
 <div class="container">
     <div class="row text-whites text-center">
-        <div class="col-md-12 bt-20 mt-20">
+        <div class="col-md-12 mt-20">
             <h2>Register</h2>
         </div>
-        <div class="col-md-12 m-0-auto">
-            <form method="GET" action="{% url 'search' %}" class="">
-                <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search by name.." class="bg-black"/>
-                <input type="submit" value="Search" class="btn btn-white"/>
-            </form>
-        </div>
     </div>
-    <div class="row">
+    <div class="row mt-5">
         <div class="m-0-auto">
             {% if meteorite_list %}
             <table id="datatable" class="table table-light table-striped table-responsive">
