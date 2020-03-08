@@ -66,6 +66,10 @@ p{
     color: whitesmoke;
 }
 
+.mt-5{
+    margin-top:5%;
+}
+
 /**
 .page-header{
     margin:0 0 0!important;
@@ -153,8 +157,20 @@ a>h1:hover{
 }
 
 .btn-white:hover{
-    color: slategray;
-    border: 2px solid slategray;
+    color: whitesmoke;
+    border: 2px solid #754158;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.btn-download{
+    color:whitesmoke;
+    border: 2px solid #754158;
+    background: rgba(0,0,0,0.9);
+    border-radius: 20px;
+}
+
+.btn-download:hover{
+    color:#754158;
 }
 
 .navbar-brand{
@@ -180,4 +196,20 @@ body::-webkit-scrollbar-track{
 
 body::-webkit-scrollbar-thumb{
     background:#754158;
+}
+
+.text-darker{
+    color:#754158;
+}
+
+.dataTables_wrapper{
+    color:whitesmoke;
+}
+
+.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate, #paginate_button.disabled.previous{
+    color:whitesmoke!important;
+}
+
+.next{
+    display:none;
 }

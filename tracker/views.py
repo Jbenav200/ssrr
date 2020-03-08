@@ -23,3 +23,13 @@ def tracker_map(request):
     }
     return render(request, 'tracker/map.html', context)
 
+def tracker_download(request):
+    meteorites = Meteorite.objects.all()
+    meteorites_csv = None
+    meteorites_json = None
+    context = {
+        'meteorites': meteorites,
+        'meteorites_csv': meteorites_csv,
+        'meteorites_JSON': meteorites_json,
+    }
+    return render(request, 'tracker/download.html', context)
