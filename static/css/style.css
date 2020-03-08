@@ -55,7 +55,7 @@ p{
 .bg-nav-black{
     background: rgba(0, 0, 0, 0.9);
     color:whitesmoke;
-    max-height:100px;
+    max-height:80px;
 }
 
 .bg-nav-black > .nav-link{
@@ -160,7 +160,8 @@ a>h1:hover{
 .navbar-brand{
     width:150px;
     margin-left:150px;
-    padding: 10px 30px 10px 30px;
+    padding: 10px 30px 10px 20px;
     background-color:#754158;
-    margin-top:2%;
+    margin-top:2.5%;
+    font-size:16px;
 }
