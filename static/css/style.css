@@ -9,7 +9,7 @@ html, body{
 }
 
 .bg-space{
-    background: white url("../media/images/space-banner.jpg") no-repeat;
+    background: url("../media/images/space-banner.jpg") repeat;
 }
 
 .text-white{
@@ -17,8 +17,7 @@ html, body{
 }
 
 a.text-white:hover{
-    opacity:0.8;
-    color: rgba(61, 61, 61, 0.8);
+    color: #754158!important;
 }
 
 .text-center{
@@ -146,6 +145,7 @@ a>h1:hover{
 }
 
 .btn-white{
+    background:none;
     color:whitesmoke;
     border:2px solid;
     border-radius:12px;
@@ -167,7 +167,7 @@ a>h1:hover{
 }
 
 body::-webkit-scrollbar{
-    width:0.25rem;
+    width:0.5rem;
 }
 
 body::-webkit-scrollbar-track{
