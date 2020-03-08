@@ -12,12 +12,12 @@ html, body{
     background: url("../media/images/space-banner.jpg") repeat;
 }
 
-.text-white{
+.text-whites{
     color:whitesmoke;
 }
 
-a.text-white:hover{
-    color: #754158!important;
+a.nav-item:hover{
+    color: #754158;
 }
 
 .text-center{
@@ -164,6 +164,10 @@ a>h1:hover{
     background-color:#754158;
     margin-top:2.5%;
     font-size:16px;
+}
+
+.navbar-brand:hover{
+    color:whitesmoke;
 }
 
 body::-webkit-scrollbar{
