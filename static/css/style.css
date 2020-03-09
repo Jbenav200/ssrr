@@ -52,7 +52,7 @@ p{
 }
 
 .bg-nav-black{
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(5, 4, 4, 0.85);
     color:whitesmoke;
     max-height:80px;
 }
@@ -144,8 +144,8 @@ a>h1:hover{
 
 .nav-item{
     font-size:25px;
-    margin-left:20px;
-    margin-right:20px;
+    margin-left:50px;
+    margin-right:50px;
 }
 
 .btn-white{
@@ -174,12 +174,18 @@ a>h1:hover{
 }
 
 .navbar-brand{
-    width:150px;
+    width:200px;
     margin-left:150px;
-    padding: 10px 30px 10px 20px;
+    padding: 20px 20px 20px 40px;
     background-color:#754158;
-    margin-top:2.5%;
-    font-size:16px;
+    margin-top:5%;
+    font-size:20px;
+    height:160px;
+    font-family: Nasalization-rg, Arial, sans-serif;
+}
+
+.nav-brand{
+    width:100%;
 }
 
 .navbar-brand:hover{
