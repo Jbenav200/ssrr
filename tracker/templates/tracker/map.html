@@ -25,39 +25,7 @@ type="text/css"
 <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
 
-<header class="bg-blue page-header">
-    <a href="/"><h1 class="text-center">Scottish Space Rock Register</h1></a>
-</header>
-<div class="hero mt-min-20">
-    <div class="hero-heading bg-black">
-        <h2 class="text-center">Map</h2>
-    </div>
-</div>
 
-<div id='map' style='width: 100%; height: 500px;'></div>
+<div id='map' style='width: 100%; height: 100%;'></div>
 
-{% if meteorites %}
-    <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
-            <th>Id</th>
-            <th>Name</th>
-            <th>Longitude</th>
-            <th>Latitude</th>
-            <th>Mass</th>
-            <th>Class</th>
-        </thead>
-        <tbody>
-            {% for m in meteorites %}
-            <tr>
-                <th scope="row">{{ m.id }}</th>
-                <td>{{ m.name }}</td>
-                <td>{{ m.rec_longitude }}</td>
-                <td>{{ m.rec_latitude }}</td>
-                <td>{{ m.mass }}</td>
-                <td>{{ m.rec_class }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endif %}
 <script src="{% static 'js/map.js' %}"></script>
