@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiamJlbmF2MjAwIiwiYSI6ImNrNmt1eGZncTA3cDQzZHFndmJpN2hocHcifQ.jdPdzMHMAQg8thoHtVGfyw';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGh1c2FyMjAwIiwiYSI6ImNrN2p1bXoxZzB4MmczZW8zOTQybXN6ZDkifQ.2qAG20LMwGtVWmqYt9FMKg';
 var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11/'
@@ -80,36 +80,45 @@ map.on('load', function() {
 }
 }
 */
-map.addSource('ethnicity', {
-type: 'vector',
-url: 'mapbox://examples.8fgz4egr'
-});
+// map.addSource('ethnicity', {
+// type: 'vector',
+// url: 'mapbox://dhusar200.ck7jvns2q0nyd2qpd0d2wsns8-1ukj2'
+// });
+
+
+
+    // good green #4ca419
+    //good orange #c58211
+    //good yellow #a1a422
 map.addLayer({
-'id': 'population',
-'type': 'circle',
-'source': 'ethnicity',
-'source-layer': 'sf2010',
-'paint': {
-// make circles larger as the user zooms from z12 to z22
-'circle-radius': {
-'base': 1.75,
-'stops': [[12, 2], [22, 180]]
-},
-// color circles by ethnicity, using a match expression
-// https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-'circle-color': [
-'match',
-['get', 'ethnicity'],
-'White',
-'#fbb03b',
-'Black',
-'#223b53',
-'Hispanic',
-'#e55e5e',
-'Asian',
-'#3bb2d0',
-/* other */ '#ccc'
-]
-}
+    id: 'points-of-interest',
+    source: {
+        type: 'vector',
+        url: 'mapbox://dhusar200.ck7jvns2q0nyd2qpd0d2wsns8-1ukj2'
+    },
+    'source-layer': 'main_registry_meteorite',
+    type: 'circle',
+    paint: {
+        'circle-radius': {
+            'base': 1.75,
+            'stops': [[12, 2], [22, 180]]
+            },
+
+        'circle-color': [
+            'match',
+            ['get', 'state'],
+            "Fell",
+            //["1504","21","720"],
+            '#a1a422',
+            "1503",
+            '#3eff09',
+            /* other */ '#ccc'
+        ]
+        // Mapbox Style Specification paint properties
+    },
+    layout: {
+        // Mapbox Style Specification layout properties
+    }
+
 });
 });
