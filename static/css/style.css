@@ -219,3 +219,30 @@ body::-webkit-scrollbar-thumb{
 .next{
     display:none;
 }
+
+.mapnav{
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index:100;
+    color: whitesmoke;
+}
+
+.fa-bars, .fa-filter{
+    padding: 20px;
+    padding-top:10px;
+    font-size:25px;
+}
+
+.fa-bars:hover, .fa-filter:hover{
+    color:#754158;
+}
+
+#map{
+    position:fixed;
+    bottom:0;
+}
+
+.nav-map{
+    visibility:hidden;
+}
