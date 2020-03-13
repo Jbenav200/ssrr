@@ -7,10 +7,32 @@
             <form id="filterForm" class="sidebar-form">
                 <label>Select filter:</label>
                 <select>
-                    <option name="MA" value="Mass"></option>
-                    <option name="CL" value="Class"></option>
-                    <option name="CN" value="Continent"></option>
+                    <option name="MA" value="Mass">Mass</option>
+                    <option name="CL" value="Class">Class</option>
+                    <option name="CN" value="Continent">Continent</option>
                 </select>
+                <br>
+                <select name="Mass" id="mass-select">
+                    <option name="1" value="1">20-50k kg</option>
+                    <option name="2" value="2">50-100k kg</option>
+                    <option name="3" value="3">> 100k kg</option>
+                </select>
+                <select name="Class" id="class-select">
+                    <option value="test">test option</option>
+                </select>
+                <select name="Continent" id="continent-select">
+                    <option name="1" value="Asia">Asia</option>
+                    <option name="2" value="Europe">Europe</option>
+                    <option name="3" value="Africa">Africa</option>
+                    <option name="4" value="North America">North America</option>
+                    <option name="5" value="South America">South America</option>
+                    <option name="6" value="Australia">Australia</option>
+                    <option name="7" value="Oceania">Oceania</option>
+                    <option name="8" value="Antarctica">Antarctica</option>
+                </select>
+                <div class="filter-sidebar-footer">
+                    <button class="btn btn-md btn-filter" type="submit" value="Submit"></button>
+                </div>
             </form>
         </div>
     </div>
