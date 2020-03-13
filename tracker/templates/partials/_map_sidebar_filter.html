@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" id="filter-sidebar">
     <div class="filter-sidebar">
         <div class="filter-sidebar-header">
             <h3>FILTER</h3>
@@ -6,21 +6,26 @@
         <div class="filter-sidebar-body">
             <form id="filterForm" class="sidebar-form">
                 <label>Select filter:</label>
-                <select>
-                    <option name="MA" value="Mass">Mass</option>
-                    <option name="CL" value="Class">Class</option>
-                    <option name="CN" value="Continent">Continent</option>
-                </select>
                 <br>
-                <select name="Mass" id="mass-select">
+                <label>Mass</label>
+                <br>
+                <select class="text-dark" name="Mass" id="mass-select">
                     <option name="1" value="1">20-50k kg</option>
                     <option name="2" value="2">50-100k kg</option>
                     <option name="3" value="3">> 100k kg</option>
                 </select>
-                <select name="Class" id="class-select">
+                <br>
+                <br>
+                <label>Class</label>
+                <br>
+                <select class="text-dark" name="Class" id="class-select">
                     <option value="test">test option</option>
                 </select>
-                <select name="Continent" id="continent-select">
+                <br>
+                <br>
+                <label>Continent</label>
+                <br>
+                <select class="text-dark" name="Continent" id="continent-select">
                     <option name="1" value="Asia">Asia</option>
                     <option name="2" value="Europe">Europe</option>
                     <option name="3" value="Africa">Africa</option>
@@ -31,7 +36,8 @@
                     <option name="8" value="Antarctica">Antarctica</option>
                 </select>
                 <div class="filter-sidebar-footer">
-                    <button class="btn btn-md btn-filter" type="submit" value="Submit"></button>
+                    <button class="btn btn-primary" type="button" value="close" onclick="closeSidebarFilter()">close</button>
+                    <button class="btn btn-success" type="submit" value="Submit">Submit</button>
                 </div>
             </form>
         </div>
