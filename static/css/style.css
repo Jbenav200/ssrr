@@ -223,9 +223,10 @@ body::-webkit-scrollbar-thumb{
 .mapnav{
     position: fixed;
     top:0;
-    width: 100%;
+    width: 80%;
     z-index:100;
     color: whitesmoke;
+    visibility:hidden;
 }
 
 .fa-bars, .fa-filter{
@@ -236,6 +237,10 @@ body::-webkit-scrollbar-thumb{
 
 .fa-bars:hover, .fa-filter:hover{
     color:#754158;
+}
+
+.fas{
+    visibility:visible;
 }
 
 #map{
@@ -282,7 +287,6 @@ body::-webkit-scrollbar-thumb{
 .filter-sidebar-footer{
     position:fixed;
     bottom:15px;
-    text-align:center;
 }
 
 .sidebar-filter-icon{
