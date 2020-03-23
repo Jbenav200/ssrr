@@ -123,3 +123,11 @@ map.addLayer({
 });
 });
 
+function onStart(){
+    $(".fa-times-circle").css('visibility', 'hidden');
+    $(".fa-bars").css('visibility', 'visible');
+    $(".fa-filter").css('visibility', 'visible');
+}
+
+onStart();
+

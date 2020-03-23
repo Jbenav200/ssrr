@@ -239,10 +239,6 @@ body::-webkit-scrollbar-thumb{
     color:#754158;
 }
 
-.fas{
-    visibility:visible;
-}
-
 #map{
     position:fixed;
     bottom:0;

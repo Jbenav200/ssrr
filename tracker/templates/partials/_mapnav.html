@@ -1,5 +1,5 @@
 <div class="mapnav">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation" onclick="openNav()">
        <i class="fas fa-bars"></i>
     </button>
     <button class="sidebar-filter-icon" type="button" onclick="openSidebarFilter()">
@@ -17,6 +17,9 @@
             <a class="nav-item nav-link text-whites" href="/map">MAP</a>
             <a class="nav-item nav-link text-whites" href="/download">DOWNLOAD</a>
             <a class="nav-item nav-link text-whites" href="/docs">DOCS</a>
+            <a href="" class="nav-item nav-link text-whites" onclick="closeNav()">
+                <i class="fas fa-times-circle"></i>
+            </a>
         </div>
     </div>
 </nav>
