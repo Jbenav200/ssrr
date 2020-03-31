@@ -26,6 +26,52 @@ define([
       // setting the view as a global object is useful for debugging
       window.view = view;
 
+      const countryBoundaries = new FeatureLayer({
+        url: "http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer",
+        title: "World Countries",
+
+        // we use a simple renderer when we want to symbolize all features with the same symbol
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "polygon-3d",
+            symbolLayers: [{
+              type: "fill",
+              material: {color: [255, 250, 239, 0.8]},
+              outline: {
+                color: [70, 70, 70, 0.7]
+              }
+            }]
+          }
+        }
+      });
+
+      // then we add the layer to the web scene
+      // I use the addMany method because we'll add some more layers later
+      webscene.addMany([countryBoundaries]);
+
+      const meteorites = new FeatureLayer({
+        url: "https://www.arcgis.com/home/item.html?id=4f8a94e3adbe431c90f665a88fb66cf9",
+        title: "meteorites",
+
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "circle",
+            symbolLayers: [{
+              type: "fill",
+              material: {color: [235, 232, 52, 0.8]},
+              outline: {
+                color: [70, 70, 70, 0.7]
+              }
+            }]
+          }
+        }
+      });
+
+      webscene.addMany([meteorites]);
+
     }
   }
 });
+
