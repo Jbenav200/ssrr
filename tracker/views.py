@@ -33,3 +33,11 @@ def tracker_download(request):
         'meteorites_JSON': meteorites_json,
     }
     return render(request, 'tracker/download.html', context)
+
+
+def tracker_globe(request):
+    meteorites = Meteorite.objects.all()
+    context = {
+        meteorites: 'meteorites',
+    }
+    return render(request, 'tracker/globe.html', context)
