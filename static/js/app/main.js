@@ -4,8 +4,7 @@ define([
   "esri/views/SceneView",
   "esri/layers/FeatureLayer",
   "esri/layers/support/LabelClass",
-  "esri/PopupTemplate"
-], function (WebScene, SceneView, FeatureLayer, LabelClass, PopupTemplate) {
+], function (WebScene, SceneView, FeatureLayer, LabelClass) {
 
   // the module exports an object with an init method
   // init creates the web scene and the view
@@ -21,7 +20,8 @@ define([
       // the view is the visual representation of the web scene
       const view = new SceneView({
         container: "view",
-        map: webscene
+        map: webscene,
+        popupEnabled: true
       });
 
       // setting the view as a global object is useful for debugging
@@ -54,6 +54,7 @@ define([
       const meteorites = new FeatureLayer({
         url: "https://services3.arcgis.com/x7zwOVxCks2KYCg6/arcgis/rest/services/NASA_meteorites/FeatureServer",
         title: "meteorites",
+        popupEnabled: true
       });
 
       webscene.addMany([meteorites]);
