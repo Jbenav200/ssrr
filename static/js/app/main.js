@@ -3,8 +3,9 @@ define([
   "esri/WebScene",
   "esri/views/SceneView",
   "esri/layers/FeatureLayer",
-  "esri/layers/support/LabelClass"
-], function (WebScene, SceneView, FeatureLayer, LabelClass) {
+  "esri/layers/support/LabelClass",
+  "esri/PopupTemplate"
+], function (WebScene, SceneView, FeatureLayer, LabelClass, PopupTemplate) {
 
   // the module exports an object with an init method
   // init creates the web scene and the view
@@ -14,7 +15,7 @@ define([
 
       // the web scene is the data model: it contains the basemap, the ground and the layers
       const webscene = new WebScene({
-        basemap: "topo"
+        basemap: "dark-gray"
       });
 
       // the view is the visual representation of the web scene
@@ -37,7 +38,7 @@ define([
             type: "polygon-3d",
             symbolLayers: [{
               type: "fill",
-              material: {color: [255, 250, 239, 0.8]},
+              material: {color: [255, 250, 239, 0.0]},
               outline: {
                 color: [70, 70, 70, 0.7]
               }
@@ -51,26 +52,11 @@ define([
       webscene.addMany([countryBoundaries]);
 
       const meteorites = new FeatureLayer({
-        url: "https://www.arcgis.com/home/item.html?id=4f8a94e3adbe431c90f665a88fb66cf9",
+        url: "https://services3.arcgis.com/x7zwOVxCks2KYCg6/arcgis/rest/services/NASA_meteorites/FeatureServer",
         title: "meteorites",
-
-        renderer: {
-          type: "simple",
-          symbol: {
-            type: "circle",
-            symbolLayers: [{
-              type: "fill",
-              material: {color: [235, 232, 52, 0.8]},
-              outline: {
-                color: [70, 70, 70, 0.7]
-              }
-            }]
-          }
-        }
       });
 
       webscene.addMany([meteorites]);
-
     }
   }
 });
