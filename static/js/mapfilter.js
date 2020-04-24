@@ -1,4 +1,3 @@
-
 // this function opens the sidebar for the map filter
 
 function openSidebarFilter(){

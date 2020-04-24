@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
+import json
 
 from registry.models import Meteorite
 
@@ -33,3 +35,6 @@ def tracker_download(request):
         'meteorites_JSON': meteorites_json,
     }
     return render(request, 'tracker/download.html', context)
+
+def geojson(request):
+    return render(request, 'tracker/package.json')

@@ -1,10 +1,12 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZGh1c2FyMjAwIiwiYSI6ImNrN2p1bXoxZzB4MmczZW8zOTQybXN6ZDkifQ.2qAG20LMwGtVWmqYt9FMKg';
 var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11/'
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/dark-v10', //hosted style id
+    center: [-77.38, 39], // starting position
+    zoom: 3 // starting zoom
 });
 
-map.setStyle('mapbox://styles/mapbox/' + 'dark-v10');
+//map.setStyle('mapbox://styles/mapbox/dark-v10');
 
 /* given a query in the form "lng, lat" or "lat, lng" returns the matching
 * geographic coordinate(s) as search results in carmen geojson format,
@@ -68,58 +70,230 @@ mapboxgl: mapboxgl
 
 
 map.on('load', function() {
-/* Sample feature from the `examples.8fgz4egr` tileset:
-{
-"type": "Feature",
-"properties": {
-"ethnicity": "White"
-},
-"geometry": {
-"type": "Point",
-"coordinates": [ -122.447303, 37.753574 ]
-}
-}
-*/
-// map.addSource('ethnicity', {
-// type: 'vector',
-// url: 'mapbox://dhusar200.ck7jvns2q0nyd2qpd0d2wsns8-1ukj2'
-// });
 
-
+    map.addSource('meteorites', {
+        'type': 'geojson',
+        'data': '/features.geojson'
+    });
 
     // good green #4ca419
     //good orange #c58211
     //good yellow #a1a422
+
 map.addLayer({
-    id: 'points-of-interest',
-    source: {
-        type: 'vector',
-        url: 'mapbox://dhusar200.ck7jvns2q0nyd2qpd0d2wsns8-1ukj2'
-    },
-    'source-layer': 'main_registry_meteorite',
-    type: 'circle',
-    paint: {
+    'id': 'meteorites-layer-small',
+    'type': 'circle',
+    'source': 'meteorites',
+    'paint': {
         'circle-radius': {
             'base': 1.75,
-            'stops': [[12, 2], [22, 180]]
+            'stops': [[12, 4], [22, 180]]
             },
 
         'circle-color': [
             'match',
-            ['get', 'state'],
-            "Fell",
-            //["1504","21","720"],
+            ['get', 'size'],
+            "small",
+            '#4ca419',
+            "medium",
             '#a1a422',
-            "1503",
-            '#3eff09',
+            "large",
+            '#c58211',
             /* other */ '#ccc'
         ]
         // Mapbox Style Specification paint properties
     },
-    layout: {
-        // Mapbox Style Specification layout properties
-    }
+    'filter': ["==","size", "small"]
+});
+
+    map.addLayer({
+        'id': 'meteorites-layer-medium',
+        'type': 'circle',
+        'source': 'meteorites',
+        'paint': {
+            'circle-radius': {
+                'base': 1.75,
+                'stops': [[12, 4], [22, 180]]
+            },
+
+            'circle-color': [
+                'match',
+                ['get', 'size'],
+                "small",
+                '#4ca419',
+                "medium",
+                '#a1a422',
+                "large",
+                '#c58211',
+                /* other */ '#ccc'
+            ]
+            // Mapbox Style Specification paint properties
+        },
+        'filter': ["==","size", "medium"]
+    });
+
+    map.addLayer({
+        'id': 'meteorites-layer-large',
+        'type': 'circle',
+        'source': 'meteorites',
+        'paint': {
+            'circle-radius': {
+                'base': 1.75,
+                'stops': [[12, 4], [22, 180]]
+            },
+
+            'circle-color': [
+                'match',
+                ['get', 'size'],
+                "small",
+                '#4ca419',
+                "medium",
+                '#a1a422',
+                "large",
+                '#c58211',
+                /* other */ '#ccc'
+            ]
+            // Mapbox Style Specification paint properties
+        },
+        'filter': ["==","size", "large"]
+    });
+
+
+    map.on('click', 'meteorites-layer-small', function(e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.size;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
+
+    map.on('click', 'meteorites-layer-medium', function(e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.size;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
+
+    map.on('click', 'meteorites-layer-large', function(e) {
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.size;
+
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(description)
+            .addTo(map);
+    });
+
+//
+// Change the cursor to a pointer when the mouse is over the places layer.
+
+    map.on('mouseenter', 'meteorites-layer-small', function() {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseenter', 'meteorites-layer-medium', function() {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseenter', 'meteorites-layer-large', function() {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+// Change it back to a pointer when it leaves.
+
+    map.on('mouseleave', 'meteorites-layer-small', function() {
+        map.getCanvas().style.cursor = '';
+    });
+
+    map.on('mouseleave', 'meteorites-layer-medium', function() {
+        map.getCanvas().style.cursor = '';
+    });
+
+    map.on('mouseleave', 'meteorites-layer-large', function() {
+        map.getCanvas().style.cursor = '';
+    });
 
 });
+
+$("#continent-select").change(function() {
+    continent = document.getElementById("continent-select").value
+    switch (continent) {
+        case "Asia":
+            map.setCenter([98.24185228685019, 30.890431040494406]);
+            break;
+        case "Europe":
+            map.setCenter([22.70291137065692, 51.20988512246353]);
+            break;
+        case "Africa":
+            map.setCenter([13.467897508237002, 0.2679887150454334]);
+            break;
+        case "North America":
+            map.setCenter([-90.38524320367412, 44.12384925868278]);
+            break;
+        case "South America":
+            map.setCenter([-65.61740507626911, -22.990495536642356]);
+            break;
+        case "Australia":
+            map.setCenter([133.52433465545153, -31.210414996771895]);
+            break;
+    }
 });
+
+var toggleableLayerIds = ['meteorites-layer-small', 'meteorites-layer-medium', 'meteorites-layer-large'];
+
+// set up the corresponding toggle button for each layer
+for (var i = 0; i < toggleableLayerIds.length; i++) {
+    var id = toggleableLayerIds[i];
+
+    var link = document.createElement('a');
+    link.href = '#';
+    link.className = 'active';
+    link.textContent = id;
+
+    link.onclick = function(e) {
+        var clickedLayer = this.textContent;
+        e.preventDefault();
+        e.stopPropagation();
+
+        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+        // toggle layer visibility by changing the layout object's visibility property
+        if (visibility === 'visible') {
+            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+        }
+    };
+
+    var layers = document.getElementById('menu');
+    layers.appendChild(link);
+}
 
