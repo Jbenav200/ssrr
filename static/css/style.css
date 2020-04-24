@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 html, body{
     top:0;
     padding:0;
@@ -229,18 +231,14 @@ body::-webkit-scrollbar-thumb{
     visibility:hidden;
 }
 
-.fa-bars, .fa-filter{
+.fa-bars, .fa-filter, .fa-globe-americas{
     padding: 20px;
     padding-top:10px;
     font-size:25px;
 }
 
-.fa-bars:hover, .fa-filter:hover{
+.fa-bars:hover, .fa-filter:hover, .fa-globe-americas:hover{
     color:#754158;
-}
-
-.fas{
-    visibility:visible;
 }
 
 #map{
@@ -304,3 +302,9 @@ body::-webkit-scrollbar-thumb{
     background-color: whitesmoke;
     color: rgb(4, 5, 5);
 }
+
+#view{
+    width:100%;
+    height:100vh;
+}
+

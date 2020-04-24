@@ -27,9 +27,11 @@ type="text/css"
 
 
 
-<div id='map' style='width: 100%; height: 100%;'></div>
+<div id='map' style='width: 100%; height: 100%;' onclick="closeNav()"></div>
 {% include 'partials/_mapnav.html' %}
 {% include 'partials/_map_sidebar_filter.html' %}
 <script src="{% static 'js/map.js' %}"></script>
 <script src="{% static 'js/mapfilter.js' %}"></script>
+<script src="{% static 'js/mapnav.js' %}"></script>
+<script src="{% static 'js/mapglobe.js' %}"></script>
 <script src="https://kit.fontawesome.com/420ec9a51b.js" crossorigin="anonymous"></script>
