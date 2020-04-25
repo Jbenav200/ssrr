@@ -24,8 +24,7 @@ define([
         popupEnabled: true
       });
 
-      // setting the view as a global object is useful for debugging
-      window.view = view;
+
 
       const countryBoundaries = new FeatureLayer({
         url: "http://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/World_Countries_(Generalized)/FeatureServer",

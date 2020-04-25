@@ -38,3 +38,10 @@ def tracker_download(request):
 
 def geojson(request):
     return render(request, 'tracker/package.json')
+
+def tracker_globe(request):
+    meteorites = Meteorite.objects.all()
+    context = {
+       'meteorites': meteorites
+    }
+    return render(request, 'tracker/globe.html', context)
