@@ -13,3 +13,5 @@ function closeNav(){
     $(".fa-filter").css('visibility', 'visible');
     $(".fa-globe-americas").css('visibility', 'visible');
 }
+
+$(".fa-times-circle").css('visibility', 'hidden');

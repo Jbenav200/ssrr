@@ -231,7 +231,7 @@ body::-webkit-scrollbar-thumb{
     visibility:hidden;
 }
 
-.fa-bars, .fa-filter, .fa-globe-americas{
+.fa-bars, .fa-filter, .fa-globe-americas, .fa-times-circle{
     padding: 20px;
     padding-top:10px;
     font-size:25px;
