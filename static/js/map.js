@@ -103,9 +103,11 @@ map.addLayer({
         ]
         // Mapbox Style Specification paint properties
     },
-    'filter': ["==","size", "small"]
+    'filter': ["==","size", "small"],
+    'layout': {
+        'visibility': "visible"
+    }
 });
-
     map.addLayer({
         'id': 'meteorites-layer-medium',
         'type': 'circle',
@@ -129,7 +131,10 @@ map.addLayer({
             ]
             // Mapbox Style Specification paint properties
         },
-        'filter': ["==","size", "medium"]
+        'filter': ["==","size", "medium"],
+        'layout': {
+            'visibility': "visible"
+        }
     });
 
     map.addLayer({
@@ -155,7 +160,10 @@ map.addLayer({
             ]
             // Mapbox Style Specification paint properties
         },
-        'filter': ["==","size", "large"]
+        'filter': ["==","size", "large"],
+        'layout': {
+            'visibility': "visible"
+        }
     });
 
 
@@ -239,10 +247,42 @@ map.addLayer({
         map.getCanvas().style.cursor = '';
     });
 
+
+    var toggleableLayerIds = ['meteorites-layer-small', 'meteorites-layer-medium', 'meteorites-layer-large'];
+    var range = ['0 - 700KG', '700 - 7000KG', ">7000KG"]
+
+// set up the corresponding toggle button for each layer
+    for (var i = 0; i < toggleableLayerIds.length; i++) {
+        var id = toggleableLayerIds[i];
+
+        var link = document.createElement('input');
+        link.type = "checkbox";
+        link.id = id;
+        link.checked = true;
+        link.className = 'active';
+
+        var label = document.createElement('label');
+        label.setAttribute('for', id);
+        label.style = "text-align: center";
+        label.textContent = id.slice(17).toLocaleUpperCase() + " " + range[i];
+
+        link.addEventListener('change', function(e) {
+            map.setLayoutProperty(
+                id,
+                'visibility',
+                e.target.checked ? 'visible' : 'none'
+            );
+        });
+
+        var layers = document.getElementById('filter-group');
+        layers.appendChild(link);
+        layers.appendChild(label);
+    }
+
 });
 
-$("#continent-select").change(function() {
-    continent = document.getElementById("continent-select").value
+function continentSelect(e) {
+    continent = e;
     switch (continent) {
         case "Asia":
             map.setCenter([98.24185228685019, 30.890431040494406]);
@@ -263,37 +303,6 @@ $("#continent-select").change(function() {
             map.setCenter([133.52433465545153, -31.210414996771895]);
             break;
     }
-});
+};
 
-var toggleableLayerIds = ['meteorites-layer-small', 'meteorites-layer-medium', 'meteorites-layer-large'];
-
-// set up the corresponding toggle button for each layer
-for (var i = 0; i < toggleableLayerIds.length; i++) {
-    var id = toggleableLayerIds[i];
-
-    var link = document.createElement('a');
-    link.href = '#';
-    link.className = 'active';
-    link.textContent = id;
-
-    link.onclick = function(e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
-
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-
-        // toggle layer visibility by changing the layout object's visibility property
-        if (visibility === 'visible') {
-            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-            this.className = '';
-        } else {
-            this.className = 'active';
-            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-        }
-    };
-
-    var layers = document.getElementById('menu');
-    layers.appendChild(link);
-}
 

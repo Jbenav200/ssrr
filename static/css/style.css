@@ -64,7 +64,7 @@ p{
 }
 
 .mt-20{
-    margin-top:20%;
+    margin-top:8%;
     color: whitesmoke;
 }
 
@@ -151,11 +151,21 @@ a>h1:hover{
 }
 
 .btn-white{
-    background:none;
-    color:whitesmoke;
-    border:2px solid;
-    border-radius:12px;
-    padding: 5px 12px;
+     background:none;
+     color:whitesmoke;
+     border:2px solid;
+     border-radius:12px;
+     padding: 5px 12px;
+ }
+
+.btn-continent{
+    background: #754158;
+    color: #FFFFFf;
+    border: 2px #754158;
+    padding: 10px;
+    width: 47%;
+    margin: 2px 0px;
+    border-radius: 3px;
 }
 
 .btn-white:hover{
@@ -278,7 +288,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 .filter-sidebar-body{
-    margin-top:40%;
+    margin-top:3%;
     font-size:17px;
 }
 
@@ -308,3 +318,20 @@ body::-webkit-scrollbar-thumb{
     height:100vh;
 }
 
+.box{
+    width:20px;
+    height:20px;
+    display: inline-block;
+}
+
+.green{
+    background:#4ca419;
+}
+
+.yellow{
+    background:#c58211;
+}
+
+.red{
+    background:#a1a422;
+}
