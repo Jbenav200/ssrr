@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
 {% block content%}
-<div class="container bt-20">
+<div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
             <h2 class="text-whites text-center mt-20">Tutorials and Documentation</h2>
         </div>
     </div>
 </div>
-<div class="container">
-
-    <div class="w3-bar w3-black">
-        <button class="w3-bar-item w3-button" onclick="openTab('Tutorial')">Tutorial</button>
-        <button class="w3-bar-item w3-button" onclick="openTab('Documentation')">Documentation</button>
+<div class="container mt-5 container-docs">
+    <div class="nav-brand text-center">
+        <button id="tut" class="btn-dark btn-tab" onclick="openTab('Tutorial')">Tutorial</button>
+        <button class="btn-dark btn-tab" onclick="openTab('Documentation')">Documentation</button>
     </div>
 
-    <div id="Tutorial" class="w3-container tut_doc">
+    <div id="Tutorial" class="tut_doc text-center">
         <h2>Tutorial</h2>
         <p>This will be tutorial.</p>
     </div>
 
-    <div id="Documentation" class="w3-container tut_doc" style="display:none">
+    <div id="Documentation" class="tut_doc text-center" style="display:none">
         <h2>Documentation</h2>
         <p>This will be documentation.</p>
     </div>
