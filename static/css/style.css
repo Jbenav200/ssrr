@@ -354,6 +354,10 @@ body::-webkit-scrollbar-thumb{
     background:#a1a422;
 }
 
+.nav-margin{
+    margin-left: 155px;
+}
+
 @font-face {
     font-family: nasa;
     src: url('../fonts/nasalization-rg.ttf');

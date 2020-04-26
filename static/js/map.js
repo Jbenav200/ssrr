@@ -169,7 +169,7 @@ map.addLayer({
 
     map.on('click', 'meteorites-layer-small', function(e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = e.features[0].properties.size;
+        var description = e.features[0].properties;
 
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
@@ -180,13 +180,16 @@ map.addLayer({
 
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML(description)
+            .setHTML("<table class='table'><tr><th>Name</th><td>" + description.name +"</td></tr> <tr><th>Size</th><td>" +
+                description.size +"</td></tr><tr><th>Mass(KG)</th><td>" + description.mass +"</td></tr><tr><th>Geo Location" +
+                "</th><td>" + description.geolocation.split("'")[3] + ", " + description.geolocation.split("'")[7] +
+                "</td></tr><tr><th>Class</th><td>" + description.class +"</td></tr></table>")
             .addTo(map);
     });
 
     map.on('click', 'meteorites-layer-medium', function(e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = e.features[0].properties.size;
+        var description = e.features[0].properties;
 
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
@@ -197,13 +200,16 @@ map.addLayer({
 
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML(description)
+            .setHTML("<table class='table'><tr><th>Name</th><td>" + description.name +"</td></tr> <tr><th>Size</th><td>" +
+                description.size +"</td></tr><tr><th>Mass(KG)</th><td>" + description.mass +"</td></tr><tr><th>Geo Location" +
+                "</th><td>" + description.geolocation.split("'")[3] + ", " + description.geolocation.split("'")[7] +
+                "</td></tr><tr><th>Class</th><td>" + description.class +"</td></tr></table>")
             .addTo(map);
     });
 
     map.on('click', 'meteorites-layer-large', function(e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
-        var description = e.features[0].properties.size;
+        var description = e.features[0].properties;
 
 // Ensure that if the map is zoomed out such that multiple
 // copies of the feature are visible, the popup appears
@@ -214,7 +220,10 @@ map.addLayer({
 
         new mapboxgl.Popup()
             .setLngLat(coordinates)
-            .setHTML(description)
+            .setHTML("<table class='table'><tr><th>Name</th><td>" + description.name +"</td></tr> <tr><th>Size</th><td>" +
+                description.size +"</td></tr><tr><th>Mass(KG)</th><td>" + description.mass +"</td></tr><tr><th>Geo Location" +
+                "</th><td>" + description.geolocation.split("'")[3] + ", " + description.geolocation.split("'")[7] +
+                "</td></tr><tr><th>Class</th><td>" + description.class +"</td></tr></table>")
             .addTo(map);
     });
 
@@ -250,6 +259,7 @@ map.addLayer({
 
     var toggleableLayerIds = ['meteorites-layer-small', 'meteorites-layer-medium', 'meteorites-layer-large'];
     var range = ['0 - 700KG', '700 - 7000KG', ">7000KG"]
+    var layers = document.getElementById('filter-group');
 
 // set up the corresponding toggle button for each layer
     for (var i = 0; i < toggleableLayerIds.length; i++) {
@@ -260,23 +270,31 @@ map.addLayer({
         link.id = id;
         link.checked = true;
         link.className = 'active';
+        layers.appendChild(link);
 
         var label = document.createElement('label');
         label.setAttribute('for', id);
         label.style = "text-align: center";
         label.textContent = id.slice(17).toLocaleUpperCase() + " " + range[i];
-
-        link.addEventListener('change', function(e) {
-            map.setLayoutProperty(
-                id,
-                'visibility',
-                e.target.checked ? 'visible' : 'none'
-            );
-        });
-
-        var layers = document.getElementById('filter-group');
-        layers.appendChild(link);
         layers.appendChild(label);
+
+        link.onclick = function(e) {
+            var clickedLayer = this.id;
+            //e.preventDefault();
+            e.stopPropagation();
+
+            var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+
+// toggle layer visibility by changing the layout object's visibility property
+            if (visibility === 'visible') {
+                map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+                this.className = '';
+            } else {
+                this.className = 'active';
+                map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+            }
+        };
+
     }
 
 });
