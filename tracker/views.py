@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 import json
-
+from pip._vendor import requests
 from registry.models import Meteorite
 
 
@@ -25,6 +25,7 @@ def tracker_map(request):
     }
     return render(request, 'tracker/map.html', context)
 
+
 def tracker_download(request):
     meteorites = Meteorite.objects.all()
     meteorites_csv = None
@@ -36,8 +37,10 @@ def tracker_download(request):
     }
     return render(request, 'tracker/download.html', context)
 
+
 def geojson(request):
     return render(request, 'tracker/package.json')
+
 
 def tracker_globe(request):
     meteorites = Meteorite.objects.all()
@@ -45,3 +48,9 @@ def tracker_globe(request):
        'meteorites': meteorites
     }
     return render(request, 'tracker/globe.html', context)
+
+
+def tracker_json(request):
+    r = requests.get('https://data.nasa.gov/resource/gh4g-9sfh.json')
+    new_data = r.json()
+    return JsonResponse(new_data, safe=False)

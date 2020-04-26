@@ -23,12 +23,14 @@
 <script src="https://js.arcgis.com/4.8/"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
+{% include 'partials/_mapnav.html' %}
+{% include 'partials/_globe_sidebar_filter.html' %}
+
 <div id="view">
 
 </div>
 
-{% include 'partials/_mapnav.html' %}
-{% include 'partials/_map_sidebar_filter.html' %}
+
 
 <script>
   // this loads the main module and runs the init method
@@ -39,3 +41,5 @@
       app.init();
     });
 </script>
+<script src="{% static 'js/globe_sidebar' %}"></script>
+<script src="{% static 'js/globe_nav' %}"></script>
