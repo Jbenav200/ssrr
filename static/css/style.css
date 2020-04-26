@@ -236,8 +236,10 @@ body::-webkit-scrollbar-thumb{
     position: fixed;
     top:0;
     width: 80%;
+    height: auto;
     z-index:100;
     color: whitesmoke;
+    background:black;
     visibility:hidden;
 }
 
@@ -248,6 +250,15 @@ body::-webkit-scrollbar-thumb{
 }
 
 .fa-bars:hover, .fa-filter:hover, .fa-globe-americas:hover{
+    color:#754158;
+}
+
+.fa-map-marked-alt{
+    padding:20px;
+    padding-top:10px;
+}
+
+.fa-map-marked-alt:hover{
     color:#754158;
 }
 
