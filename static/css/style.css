@@ -16,6 +16,13 @@ html, body{
 
 .text-whites{
     color:whitesmoke;
+    font-family: 'nasa', Nasalization-rg;
+}
+
+.SSRR{
+    color:whitesmoke;
+    font-family: 'nasa', Nasalization-rg;
+    font-size: 27px;
 }
 
 a.nav-item:hover{
@@ -188,7 +195,7 @@ a>h1:hover{
 .navbar-brand{
     width:200px;
     margin-left:150px;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 40px 20px !important;
     background-color:#754158;
     margin-top:5%;
     font-size:20px;
@@ -334,4 +341,9 @@ body::-webkit-scrollbar-thumb{
 
 .red{
     background:#a1a422;
+}
+
+@font-face {
+    font-family: nasa;
+    src: url('../fonts/nasalization-rg.ttf');
 }
