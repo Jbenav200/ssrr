@@ -14,6 +14,13 @@ def index(request):
     }
     return render(request, 'tracker/index.html', context)
 
+# docs
+def tracker_docs(request):
+    context = {
+        'title': 'Docs',
+    }
+    return render(request, 'tracker/docs.html', context)
+
 
 def tracker(request):
     return HttpResponse('<h1 style="text-align:center">Track Meteorite Landings</h1>')
