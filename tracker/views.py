@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
 import json
+import csv
 from pip._vendor import requests
 from registry.models import Meteorite
 
@@ -54,3 +55,14 @@ def tracker_json(request):
     r = requests.get('https://data.nasa.gov/resource/gh4g-9sfh.json')
     new_data = r.json()
     return JsonResponse(new_data, safe=False)
+
+
+def tracker_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    writer = csv.writer(response)
+    writer.writerow(['id', 'name', 'class', 'mass', 'fall', 'year', 'latitude', 'longitude', 'geolocation'])
+    for meteorite in Meteorite.objects.all().values_list('id', 'name', 'rec_class', 'mass', 'fall', 'year', 'rec_latitude', 'rec_longitude', 'geolocation'):
+        writer.writerow(meteorite)
+
+    response['Content-Disposition'] = 'attachment; filename="meteorites.csv"'
+    return response
