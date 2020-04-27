@@ -358,6 +358,21 @@ body::-webkit-scrollbar-thumb{
     margin-left: 155px;
 }
 
+.btn-tab{
+    margin-top: 10px;
+    font-size: 20px;
+    height: 40px;
+    width: 49.5%;
+    font-family: nasa, Nasalization-rg;
+    padding: 0;
+    border: 5px;
+    border-radius: 5px;
+}
+
+.container-docs{
+    background: rgba(5, 4, 4, 0.85);
+}
+
 @font-face {
     font-family: nasa;
     src: url('../fonts/nasalization-rg.ttf');
