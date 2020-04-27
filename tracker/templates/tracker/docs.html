@@ -9,8 +9,9 @@
 </div>
 <div class="container mt-5 container-docs">
     <div class="nav-brand text-center">
-        <button id="tut" class="btn-dark btn-tab btn-bgr" onclick="openTab('Tutorial')">Tutorial</button>
+        <button id="tut" class="btn-dark btn-tab" onclick="openTab('Tutorial')">Tutorial</button>
         <button class="btn-dark btn-tab" onclick="openTab('Documentation')">Documentation</button>
+        <button class="btn-dark btn-tab" onclick="openTab('Authors')">Authors</button>
     </div>
 
     <div id="Tutorial" class="tut_doc text-center text-whites">
@@ -35,17 +36,39 @@
             </div>
         </div>
     </div>
+
+
     <div id="Documentation" class="tut_doc text-center text-whites" style="display:none">
-        <div class="row">
+        <div class="row text-left">
             <div class="col-sm container-tutdocs">
                 <h3>MAP API</h3>
-                .<br><br>
-                <h3>GLOBE API</h3>
-                .
+                To visualise data on an interactive map we used the MapBox API. MapBox allows us to use JSON to create
+                a feature layer, with each recorded meteorite as a separate feature. It then allows us to filter through
+                the features and display them accordingly, changing the colour for each feature point (Dot on the map).
+                MapBox was a solid choice due to its reputation, it has been used across many different web applications
+                and is used by many big name brands to visualise data or even simply place a map on their websites.
             </div>
             <div class="col-sm container-tutdocs">
                 <h3> DJANGO</h3>
-                .<br><br>
+                Django is a powerful RESTful web framework for Python, with out of-the-box authentication and basic
+                security measures which protect from Cross Site Scripting attacks, SQL Injection amongst others. It also s
+                upports a CMS backend which we can use to import our data from NASA.<br><br>
+                <h3>GLOBE API</h3>
+                ArcGIS is a web API that allows us to model a 3D globe on our website and use FeatureLayers to visualise
+                our data. It also allows us to control how the data is visualised, in this case we visualised the data by mass and changed the point size and colour.
+            </div>
+        </div>
+    </div>
+    <div id="Authors" class="tut_doc text-center text-whites" style="display:none">
+        <div class="row text-left">
+            <div class="col-sm container-tutdocs">
+                <h3>About Us</h3>
+                We are Jonathan, Dominik, Jamie and Ewa - group 5 from the Integrated Project 3 module. Jonathan and
+                Dominik took care of the programming side and Jamie and Ewa wrote the report. We all made the design decisions together.
+            </div>
+            <div class="col-sm container-tutdocs">
+                <h3>University</h3>
+                Glasgow Caledonian University <br> Software Development for Business
             </div>
         </div>
     </div>

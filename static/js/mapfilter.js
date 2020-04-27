@@ -8,8 +8,9 @@ function openSidebarFilter(){
 //function closes the sidebar for the map filter
 
 function closeSidebarFilter(){
-    $('.fas').css('visibility', 'visible');
-    $('#filter-sidebar').css('visibility', 'hidden');
+        $('.fas').css('visibility', 'visible');
+        $('#filter-sidebar').css('visibility', 'hidden');
+
 }
 
 $('#map').on('click', closeSidebarFilter());
