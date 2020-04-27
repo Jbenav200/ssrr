@@ -3,11 +3,9 @@
 ### This is our Integrated Project 3 solution
 As a group we decided that we wanted to develop
 a web based application which records and visualises
-<<<<<<< HEAD
+
 data from NASA's Meteorite API.
-=======
-data from NASA's NEO API.
->>>>>>> master
+
 
 #### What Does the S.S.R.R do with the API data?
 The Scottish Space Rock Register collects data about Landed Meteorites.
@@ -15,7 +13,6 @@ This data allows us to visualise areas on earth by co-ordinates
 where meteorites have landed and display more information. 
 
 #### Want more?
-<<<<<<< HEAD
 The S.S.R.R will have a record all of these Meteorites and offers 
 a searchable register with more detailed information.
 
@@ -50,8 +47,8 @@ Here are a few suggestions from us:
 [insert link]
 
 ![alt text](ssrr-docs-home.png "Docs landing page")
-=======
+
 The S.S.R.R has will record all of these NEOs and also
 offer a searchable register with more detailed information
 about these NEOs. 
->>>>>>> master
+
