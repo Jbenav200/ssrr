@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html, body{
+    top:0;
+    padding:0;
+    color: whitesmoke;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.bg-space{
+    background: url("../media/images/space-banner.jpg") repeat;
+}
+
+.text-whites{
+    color:whitesmoke;
+    font-family: 'nasa', Nasalization-rg;
+}
+
+.SSRR{
+    color:whitesmoke;
+    font-family: 'nasa', Nasalization-rg;
+    font-size: 27px;
+}
+
+a.nav-item:hover{
+    color: #754158;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.btn-success{
+    background-color: lawngreen;
+    color: black;
+}
+
+.pink{
+    color:deeppink;
+}
+
+h2.registry{
+    text-decoration: underline;
+}
+
+p{
+    font-weight: bolder;
+}
+
+.bg-blue{
+    background: rgba(0, 0, 0, 0.9);
+    height:auto;
+    width:100%;
+    margin-top:0;
+    padding-top: 0;
+    position: relative;
+    color:whitesmoke;
+}
+
+.bg-nav-black{
+    background: rgba(5, 4, 4, 0.85);
+    color:whitesmoke;
+    max-height:80px;
+}
+
+.bg-nav-black > .nav-link{
+    color:whitesmoke;
+}
+
+.mt-20{
+    margin-top:8%;
+    color: whitesmoke;
+}
+
+.mt-5{
+    margin-top:5%;
+}
+
+/**
+.page-header{
+    margin:0 0 0!important;
+    padding-top: 2%;
+    border-bottom: 0!important;
+}
+
+.page-header>h1{
+    padding-bottom: 2%
+}
+*/
+.banner{
+    padding:0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.text-up-5{
+    margin-top:-15%;
+    color:white;
+}
+
+.container{
+ /** do nothing */
+}
+
+.bt-20{
+    margin-bottom:200px;
+}
+
+a>h1{
+    color:white;
+    text-decoration: none;
+}
+
+a>h1:hover{
+    text-decoration: none;
+}
+
+.hero{
+    width:100%;
+    max-height:300px;
+}
+
+.bg-dblue{
+    background-color: royalblue;
+    color:white;
+    height:auto;
+    width:auto;
+}
+
+.mt-min-20{
+    margin-top:-1.5%;
+}
+
+.bg-black{
+    background-color: black;
+    color:white;
+}
+
+#map{
+    margin-top:-0.8%;
+}
+
+.m-0-auto{
+    margin:0 auto;
+}
+
+.navbar-nav{
+    margin: 0 auto;
+}
+
+.nav-item{
+    font-size:25px;
+    margin-left:50px;
+    margin-right:50px;
+}
+
+.btn-white{
+     background:none;
+     color:whitesmoke;
+     border:2px solid;
+     border-radius:12px;
+     padding: 5px 12px;
+ }
+
+.btn-continent{
+    background: #754158;
+    color: #FFFFFf;
+    margin-bottom: 4px;
+    border: 2px #754158;
+    padding: 10px;
+    width: 47%;
+    border-radius: 3px;
+}
+
+.btn-white:hover{
+    color: whitesmoke;
+    border: 2px solid #754158;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.btn-download{
+    color:whitesmoke;
+    border: 2px solid #754158;
+    background: rgba(0,0,0,0.9);
+    border-radius: 20px;
+}
+
+.btn-download:hover{
+    color:#754158;
+}
+
+.navbar-brand{
+    width:200px;
+    margin-left:150px;
+    padding: 20px 20px 40px 20px !important;
+    background-color:#754158;
+    margin-top:5%;
+    font-size:20px;
+    height:160px;
+    font-family: Nasalization-rg, Arial, sans-serif;
+}
+
+.nav-brand{
+    width:100%;
+}
+
+.navbar-brand:hover{
+    color:whitesmoke;
+}
+
+body::-webkit-scrollbar{
+    width:0.5rem;
+}
+
+body::-webkit-scrollbar-track{
+    background:black;
+}
+
+body::-webkit-scrollbar-thumb{
+    background:#754158;
+}
+
+.text-darker{
+    color:#754158;
+}
+
+.dataTables_wrapper{
+    color:whitesmoke;
+}
+
+.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate, #paginate_button.disabled.previous{
+    color:whitesmoke!important;
+}
+
+.next{
+    display:none;
+}
+
+.mapnav{
+    position: fixed;
+    top:0;
+    width: 80%;
+    height: auto;
+    z-index:100;
+    color: whitesmoke;
+    background:black;
+    visibility:hidden;
+}
+
+.fa-bars, .fa-filter, .fa-globe-americas, .fa-times-circle{
+    padding: 20px;
+    padding-top:10px;
+    font-size:25px;
+}
+
+.fa-bars:hover, .fa-filter:hover, .fa-globe-americas:hover{
+    color:#754158;
+}
+
+.fa-map-marked-alt{
+    padding:20px;
+    padding-top:10px;
+}
+
+.fa-map-marked-alt:hover{
+    color:#754158;
+}
+
+#map{
+    position:fixed;
+    bottom:0;
+}
+
+.nav-map{
+    visibility:hidden;
+}
+
+.sidebar{
+    width:20%;
+    height: 100vh;
+    position: fixed;
+    left:0;
+    top:0;
+    background: rgba(5, 4, 4, 0.85);
+    color:whitesmoke;
+    z-index: 100;
+    text-align: center;
+    border-right:3px solid #754158;
+    visibility:hidden;
+}
+
+.filter-sidebar-header{
+    height:10%;
+    width:100%;
+    margin-bottom:5%;
+}
+
+.filter-sidebar-header>h3{
+    border-bottom:3px solid #754158;
+    border-right:0px;
+    border-top:0px;
+    border-left:0px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.filter-sidebar-body{
+    margin-top:3%;
+    margin-left: 5px;
+    font-size:17px;
+}
+
+.filter-sidebar-footer{
+    position:absolute;
+    bottom:0px;
+    right: 0px;
+    margin: 30px;
+}
+
+.fil
+
+.sidebar-filter-icon{
+    background:none;
+    border:none;
+}
+
+.btn-filter-submit{
+    background:none;
+    border:2px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.btn-filter-close{
+    background-color: whitesmoke;
+    color: rgb(4, 5, 5);
+}
+
+#view{
+    width:100%;
+    height:100vh;
+}
+
+.box{
+    width:20px;
+    height:20px;
+    display: inline-block;
+}
+
+.green{
+    background:#4ca419;
+}
+
+.yellow{
+    background:#a1a422;
+}
+
+.red{
+    background:#c58211;
+}
+
+.nav-margin{
+    margin-left: 155px;
+}
+
+.btn-tab{
+    margin-top: 10px;
+    font-size: 20px;
+    height: 40px;
+    width: 32%;
+    font-family: nasa, Nasalization-rg;
+    padding: 0;
+    border: 5px;
+    border-radius: 5px;
+    margin-bottom: 70px;
+}
+
+.container-docs{
+    background: rgba(5, 4, 4, 0.85);
+    padding-bottom: 50px;
+}
+
+.btn_close{
+    margin: 15px;
+    text-align: right;
+    float: right;
+}
+
+.text-left{
+    text-align: justify!important;
+}
+
+.container-tutdocs{
+   padding-left: 70px;
+   padding-right: 70px;
+}
+
+.heading-padding{
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.filter-padding{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.btn-bgr{
+    background: none;
+    float: right;
+}
+
+.test{
+    font-size: 20px;
+    text-align: center!important;
+    width: 70%;
+    margin: 0px auto;
+}
+
+@font-face {
+    font-family: nasa;
+    src: url('../fonts/nasalization-rg.ttf');
+}

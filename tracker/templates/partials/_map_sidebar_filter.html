@@ -1,0 +1,90 @@
+<div class="sidebar" id="filter-sidebar">
+    <div class="filter-sidebar">
+        <div class="filter-sidebar-header">
+            <h3>FILTER</h3>
+        </div>
+        <div class="filter-sidebar-body">
+            <div class="filter_padding">
+            <label>KEY</label>
+            <br>
+            <div style="text-align: left"><div class='box green'></div> - Small Meteorites (0 - 700KG)</div>
+            <div style="text-align: left"><div class='box yellow'></div> - Medium Meteorites (700 - 7000KG)</div>
+            <div style="text-align: left"><div class='box red'></div> - Large Meteorites (>7000KG)</div>
+            </div>
+            <br>
+            <label>MASS</label>
+            <br>
+            <div>
+            <div id="map"></div>
+            <nav id="filter-group" class="filter-group"></nav>
+            </div>
+            <br>
+            <br>
+            <div>
+            <label>CONTINENT</label>
+            <br>
+            <button class="btn-continent" onclick="continentSelect('Asia')">Asia</button>
+            <button class="btn-continent" onclick="continentSelect('Europe')">Europe</button>
+            <button class="btn-continent" onclick="continentSelect('Africa')">Africa</button>
+            <button class="btn-continent" onclick="continentSelect('Australia')">Australia</button>
+            <button class="btn-continent" onclick="continentSelect('North America')">North America</button>
+            <button class="btn-continent" onclick="continentSelect('South America')">South America</button>
+            </div>
+            <br>
+            <br>
+            <div class="filter-sidebar-footer text-center text-white">
+                <button class="btn-white btn_close" type="button" value="close" onclick="closeSidebarFilter()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .filter-group {
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        position: relative;
+        top: 10px;
+        right: 10px;
+        z-index: 1;
+        border-radius: 3px;
+        color: #fff;
+        margin-left: 15px;
+    }
+
+    .filter-group input[type='checkbox']:first-child + label {
+        border-radius: 3px 3px 0 0;
+    }
+
+    .filter-group label:last-child {
+        border-radius: 0 0 3px 3px;
+        border: none;
+    }
+
+    .filter-group input[type='checkbox'] {
+        display: none;
+    }
+
+    .filter-group input[type='checkbox'] + label {
+        background-color: #8c3b68;
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .filter-group input[type='checkbox'] + label {
+        background-color: #5d2446;
+        text-transform: capitalize;
+    }
+
+    .filter-group input[type='checkbox'] + label:hover,
+    .filter-group input[type='checkbox']:checked + label {
+        background-color: #754158;
+    }
+
+    .filter-group input[type='checkbox']:checked + label:before {
+        content: '✔';
+        margin-right: 5px;
+    }
+</style>
