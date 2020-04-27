@@ -371,6 +371,16 @@ body::-webkit-scrollbar-thumb{
 
 .container-docs{
     background: rgba(5, 4, 4, 0.85);
+    padding-bottom: 50px;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.container-tutdocs{
+   padding-left: 70px;
+   padding-right: 70px;
 }
 
 @font-face {
