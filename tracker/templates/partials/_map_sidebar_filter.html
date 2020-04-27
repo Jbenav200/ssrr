@@ -4,19 +4,24 @@
             <h3>FILTER</h3>
         </div>
         <div class="filter-sidebar-body">
-            <label>Key</label>
+            <div class="filter_padding">
+            <label>KEY</label>
             <br>
             <div style="text-align: left"><div class='box green'></div> - Small Meteorites (0 - 700KG)</div>
             <div style="text-align: left"><div class='box yellow'></div> - Medium Meteorites (700 - 7000KG)</div>
             <div style="text-align: left"><div class='box red'></div> - Large Meteorites (>7000KG)</div>
+            </div>
             <br>
-            <label>Mass</label>
+            <label>MASS</label>
             <br>
+            <div>
             <div id="map"></div>
             <nav id="filter-group" class="filter-group"></nav>
+            </div>
             <br>
             <br>
-            <label>Continent</label>
+            <div>
+            <label>CONTINENT</label>
             <br>
             <button class="btn-continent" onclick="continentSelect('Asia')">Asia</button>
             <button class="btn-continent" onclick="continentSelect('Europe')">Europe</button>
@@ -24,10 +29,11 @@
             <button class="btn-continent" onclick="continentSelect('Australia')">Australia</button>
             <button class="btn-continent" onclick="continentSelect('North America')">North America</button>
             <button class="btn-continent" onclick="continentSelect('South America')">South America</button>
+            </div>
             <br>
             <br>
             <div class="filter-sidebar-footer text-center text-white">
-                <button class="btn-white" type="button" value="close" onclick="closeSidebarFilter()">close</button>
+                <button class="btn-white btn_close" type="button" value="close" onclick="closeSidebarFilter()">Close</button>
             </div>
         </div>
     </div>

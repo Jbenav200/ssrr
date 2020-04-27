@@ -168,10 +168,10 @@ a>h1:hover{
 .btn-continent{
     background: #754158;
     color: #FFFFFf;
+    margin-bottom: 4px;
     border: 2px #754158;
     padding: 10px;
     width: 47%;
-    margin: 2px 0px;
     border-radius: 3px;
 }
 
@@ -299,21 +299,28 @@ body::-webkit-scrollbar-thumb{
 }
 
 .filter-sidebar-header>h3{
-    border:3px solid #754158;
+    border-bottom:3px solid #754158;
     border-right:0px;
+    border-top:0px;
+    border-left:0px;
     padding-top:10px;
     padding-bottom:10px;
 }
 
 .filter-sidebar-body{
     margin-top:3%;
+    margin-left: 5px;
     font-size:17px;
 }
 
 .filter-sidebar-footer{
-    position:fixed;
-    bottom:15px;
+    position:absolute;
+    bottom:0px;
+    right: 0px;
+    margin: 30px;
 }
+
+.fil
 
 .sidebar-filter-icon{
     background:none;
@@ -347,11 +354,11 @@ body::-webkit-scrollbar-thumb{
 }
 
 .yellow{
-    background:#c58211;
+    background:#a1a422;
 }
 
 .red{
-    background:#a1a422;
+    background:#c58211;
 }
 
 .nav-margin{
@@ -367,6 +374,7 @@ body::-webkit-scrollbar-thumb{
     padding: 0;
     border: 5px;
     border-radius: 5px;
+    margin-bottom: 70px;
 }
 
 .container-docs{
@@ -374,13 +382,41 @@ body::-webkit-scrollbar-thumb{
     padding-bottom: 50px;
 }
 
+.btn_close{
+    margin: 15px;
+    text-align: right;
+    float: right;
+}
+
 .text-left{
-    text-align: left;
+    text-align: justify!important;
 }
 
 .container-tutdocs{
    padding-left: 70px;
    padding-right: 70px;
+}
+
+.heading-padding{
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.filter-padding{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.btn-bgr{
+    background: none;
+    float: right;
+}
+
+.test{
+    font-size: 20px;
+    text-align: center!important;
+    width: 70%;
+    margin: 0px auto;
 }
 
 @font-face {

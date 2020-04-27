@@ -27,7 +27,7 @@ type="text/css"
 
 
 
-<div id='map' style='width: 100%; height: 100%;' onclick="closeNav()"></div>
+<div id='map' style='width: 100%; height: 100%;' onclick="closeNav(), closeSidebarFilter()"></div>
 {% include 'partials/_mapnav.html' %}
 {% include 'partials/_map_sidebar_filter.html' %}
 <script src="{% static 'js/map.js' %}"></script>

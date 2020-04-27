@@ -301,6 +301,7 @@ map.addLayer({
 
 function continentSelect(e) {
     continent = e;
+    map.setZoom(3);
     switch (continent) {
         case "Asia":
             map.setCenter([98.24185228685019, 30.890431040494406]);
